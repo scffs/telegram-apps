@@ -11,27 +11,28 @@ import {
 
 import { getStorageValue, setStorageValue } from '@/storage/storage.js';
 
-beforeEach(() => {
-  const storage = {
-    getItem: vi.fn(),
-    setItem: vi.fn(),
-    removeItem: vi.fn(),
-    clear: vi.fn(),
-    key: vi.fn(),
-    length: 0,
-  };
-
-  try {
-    delete (globalThis as any).sessionStorage;
-  } catch {
-  }
-
-  Object.defineProperty(globalThis, 'sessionStorage', {
-    value: storage,
-    writable: true,
-    configurable: true,
-  });
-});
+// comment this stuff for test
+// beforeEach(() => {
+//   const storage = {
+//     getItem: vi.fn(),
+//     setItem: vi.fn(),
+//     removeItem: vi.fn(),
+//     clear: vi.fn(),
+//     key: vi.fn(),
+//     length: 0,
+//   };
+//
+//   try {
+//     delete (globalThis as any).sessionStorage;
+//   } catch {
+//   }
+//
+//   Object.defineProperty(globalThis, 'sessionStorage', {
+//     value: storage,
+//     writable: true,
+//     configurable: true,
+//   });
+// });
 
 afterEach(() => {
   vi.restoreAllMocks();
